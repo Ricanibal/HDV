@@ -1,0 +1,141 @@
+.Habilidades {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-grow: 2;
+}
+
+#card {
+    box-shadow: 10px 3px 2px rgb(240, 193, 171);
+}
+
+#CardAngular {
+    box-shadow: 10px 3px 2px rgb(240, 193, 171);
+    animation-duration: 3s;
+    animation-name: Angular;
+    animation-fill-mode: forwards;
+}
+
+@keyframes Angular {
+    0% {
+        box-shadow: 10px 3px 2px rgb(240, 193, 171);
+    }
+
+    100% {
+        box-shadow: -10px 3px 5px rgb(228, 3, 3);
+    }
+}
+
+#CardIonic
+{
+    box-shadow: 10px 3px 2px rgb(240, 193, 171);
+    animation-duration: 3s;
+    animation-name: Ionic;
+    animation-fill-mode: forwards;
+}
+
+@keyframes Ionic {
+    0%
+    {
+        box-shadow: 10px 3px 2px rgb(240, 193, 171);
+    }
+    100%
+    {
+        box-shadow: -10px 3px 5px rgb(6, 2, 199);
+    }
+}
+
+#CardReact
+{
+    box-shadow: 10px 3px 2px rgb(240, 193, 171);
+    animation-duration: 3s;
+    animation-name: React;
+    animation-fill-mode: forwards;
+}
+
+@keyframes React {
+    0%
+    {
+        box-shadow: 10px 3px 2px rgb(240, 193, 171);
+    }
+    100%
+    {
+        box-shadow: -10px 3px 5px rgb(108, 0, 141);
+    }
+}
+
+.parrafo {
+    max-width: 250px;
+    text-align: left;
+    padding-left:15px ;
+    animation-name: parrafoAnimation;
+    animation-duration: 3s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes parrafoAnimation {
+    0%
+    {
+       margin-left: 100%;
+        width: 600px  
+    }
+    
+    100%
+    {
+      margin-left: 0%;
+      width: 300px;  
+    }
+       
+}
+
+.img {
+    max-height: 200px;
+}
+
+#Desplegable {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.imgEstudio
+{
+    max-width: 400px;
+    background-size: 300px;
+    width: 300px;
+    height: 300px;
+    background-repeat: no-repeat;
+}
+.Estudio
+{
+    max-width: 400px;
+}
+.Alineacion
+{
+    display: flex;
+    justify-content: space-between; 
+    margin: 8px; 
+    flex-wrap: wrap;
+}
+.TextEstudio
+{
+    font-size: 0%;
+    margin-top: 25%;
+    height: 0%;
+
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: width 2s ease-out 100ms;
+    transition: background-color 2s ease-out 100ms;
+    transition: font-size 2s ease-out 100ms;
+    transition: height 2s ease-out 100ms;
+    transition: border-radius .8s ease-out 100ms;
+}
+.TextEstudio:hover
+{
+    font-size: 100%;
+    height: 100%;
+    border-radius: 0%;
+    margin-top: 0;
+    background-color: rgba(0, 0, 0, 0.63);
+}

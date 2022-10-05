@@ -1,0 +1,16 @@
+.inf-personal
+{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+.inf-estudio
+{
+    flex-grow: 3;
+}
+.contenedor
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}

@@ -1,0 +1,61 @@
+<h1 style="text-align: center;">
+    <strong>
+        Ricardo Anibal Castrillon Sanchez
+    </strong>
+</h1>
+<details open id="Desplegable">
+    <summary id="card">
+        <h1>
+            <strong>
+                Estudios
+            </strong>
+        </h1>
+    </summary>
+    <div class="Alineacion" style="align-content: center;">
+        <div *ngFor="let estudio of estu " class="Habilidades">
+            <div style="background-image: url({{estudio.Certificado}});" class="imgEstudio">
+                <div class="TextEstudio">
+                    <p style="color: rgba(240, 248, 255, 0.726);padding-top: 25%;">{{estudio.Institucion}}</p>
+                    <p style="color: rgba(240, 248, 255, 0.726);"> {{estudio.Fecha}}</p>
+                    <p style="color: rgba(240, 248, 255, 0.726);">{{estudio.Tipo}}</p>
+                    <p style="color: rgba(240, 248, 255, 0.726);">{{estudio.Habilidad}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</details>
+<details open id="Desplegable">
+    <summary id="card">
+        <h1>
+            <strong>
+                Habilidades
+            </strong>
+        </h1>
+    </summary>
+    <div class="Alineacion">
+        <div *ngFor="let despliegue of herra" style="margin: 6px; max-width: 600px;flex-grow: 1;" >
+           <div>
+             <summary id="{{Animacion}}">
+                <strong>
+                    {{despliegue.Nombre}}
+                </strong>
+            </summary>
+            <div class="Habilidades">
+                <img src="{{despliegue.Img}}" alt="" class="img" (mouseover)="Ani(despliegue)">
+                <div *ngIf="despliegue.Visible">
+                    <div *ngFor="let texto of despliegue.Utilidad">
+                        <p class="parrafo"> {{texto}} </p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!despliegue.Visible">
+                <strong>
+                    Ubicate en la imagen para mas informacion
+                </strong>
+            </div>
+           </div>
+           
+        </div>
+    </div>
+</details>
