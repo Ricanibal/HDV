@@ -1,16 +1,37 @@
-.inf-personal
-{
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
+:host {
+    display: block;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f7fbff 0%, #eef4fb 100%);
 }
-.inf-estudio
-{
-    flex-grow: 3;
-}
-.contenedor
-{
+
+.contenedor {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.inf-personal {
+    display: flex;
+    flex: 1 1 280px;
+    justify-content: center;
+    position: sticky;
+    top: 1rem;
+}
+
+.inf-estudio {
+    flex: 2 1 620px;
+}
+
+@media (max-width: 900px) {
+    .contenedor {
+        padding: 1.25rem 1rem;
+    }
+
+    .inf-personal {
+        position: static;
+    }
 }
