@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
 import { estudio } from './estudio.model';
 import { herramientas } from './herramientas.model';
 @Component({
@@ -8,7 +7,6 @@ import { herramientas } from './herramientas.model';
   styleUrls: ['./habilidades.component.css']
 })
 export class HabilidadesComponent implements OnInit {
-  Animacion:string ="card"
   constructor() { }
   herra:herramientas[] = [
     new herramientas("Angular","Angular.png","CardAngular","",["Angular es un framework o entorno de trabajo que facilita mucho la creación, ya que se puede dividir por componentes ayudando a organizar mejor los proyectos","Esta página es un ejemplo de mis cualidades con Angular"]),
@@ -24,7 +22,6 @@ export class HabilidadesComponent implements OnInit {
   Ani(Herramienta:herramientas)
   {
     Herramienta.Visible=true
-    this.Animacion = Herramienta.Animacion;
   }
   Offani(Herramienta:herramientas)
   {

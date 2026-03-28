@@ -1,61 +1,55 @@
-<h1 style="text-align: center;">
-    <strong>
-        Ricardo Anibal Castrillon Sanchez
-    </strong>
-</h1>
-<details open id="Desplegable">
-    <summary id="card">
-        <h1>
-            <strong>
-                Estudios
-            </strong>
-        </h1>
-    </summary>
-    <div class="Alineacion" style="align-content: center;">
-        <div *ngFor="let estudio of estu " class="Habilidades">
-            <div style="background-image: url({{estudio.Certificado}});" class="imgEstudio">
-                <div class="TextEstudio">
-                    <p style="color: rgba(240, 248, 255, 0.726);padding-top: 25%;">{{estudio.Institucion}}</p>
-                    <p style="color: rgba(240, 248, 255, 0.726);"> {{estudio.Fecha}}</p>
-                    <p style="color: rgba(240, 248, 255, 0.726);">{{estudio.Tipo}}</p>
-                    <p style="color: rgba(240, 248, 255, 0.726);">{{estudio.Habilidad}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="panel">
+    <h1 class="nombre">
+        <strong>Ricardo Anibal Castrillon Sanchez</strong>
+    </h1>
 
-</details>
-<details open id="Desplegable">
-    <summary id="card">
-        <h1>
-            <strong>
-                Habilidades
-            </strong>
-        </h1>
-    </summary>
-    <div class="Alineacion">
-        <div *ngFor="let despliegue of herra" style="margin: 6px; max-width: 600px;flex-grow: 1;" >
-           <div>
-             <summary id="{{Animacion}}">
-                <strong>
-                    {{despliegue.Nombre}}
-                </strong>
-            </summary>
-            <div class="Habilidades">
-                <img src="{{despliegue.Img}}" alt="" class="img" (mouseover)="Ani(despliegue)">
-                <div *ngIf="despliegue.Visible">
-                    <div *ngFor="let texto of despliegue.Utilidad">
-                        <p class="parrafo"> {{texto}} </p>
+    <details open id="Desplegable" class="bloque">
+        <summary class="card">
+            <h2><strong>Estudios</strong></h2>
+        </summary>
+
+        <div class="alineacion">
+            <article *ngFor="let estudio of estu" class="estudio-card">
+                <div [ngStyle]="{'background-image': 'url(/assets/img/' + estudio.Certificado + ')'}" class="imgEstudio">
+                    <div class="text-estudio">
+                        <p>{{estudio.Institucion}}</p>
+                        <p>{{estudio.Fecha}}</p>
+                        <p>{{estudio.Tipo}}</p>
+                        <p>{{estudio.Habilidad}}</p>
                     </div>
                 </div>
-            </div>
-            <div *ngIf="!despliegue.Visible">
-                <strong>
-                    Ubicate en la imagen para mas informacion
-                </strong>
-            </div>
-           </div>
-           
+            </article>
         </div>
-    </div>
-</details>
+    </details>
+
+    <details open id="Desplegable" class="bloque">
+        <summary class="card">
+            <h2><strong>Habilidades</strong></h2>
+        </summary>
+
+        <div class="alineacion">
+            <article *ngFor="let despliegue of herra" class="tool-card">
+                <h3 [id]="despliegue.Visible ? despliegue.Animacion : 'card'" class="tool-title">
+                    <strong>{{despliegue.Nombre}}</strong>
+                </h3>
+
+                <div class="habilidades">
+                    <img
+                        [src]="'/assets/img/' + despliegue.Img"
+                        [alt]="despliegue.Nombre"
+                        class="img"
+                        (mouseenter)="Ani(despliegue)"
+                        (mouseleave)="Offani(despliegue)">
+
+                    <div *ngIf="despliegue.Visible" class="tool-info">
+                        <p *ngFor="let texto of despliegue.Utilidad" class="parrafo">{{texto}}</p>
+                    </div>
+
+                    <div *ngIf="!despliegue.Visible" class="helper-text">
+                        <strong>Pasa el cursor por la imagen para ver más información.</strong>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </details>
+</section>
